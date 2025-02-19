@@ -1,11 +1,12 @@
-NAME = phonebook
+NAME = brainz
 CC = c++
 FLAGS = -Werror -Wall -Wextra -g -std=c++98
 DIROBJS = .objs
 OBJS = $(SRCS:%.cpp=$(DIROBJS)/%.o)
-SRCS = phonebook.cpp \
-	   contact.cpp \
-	   main.cpp
+SRCS = main.cpp \
+	   Zombie.cpp \
+	   newZombie.cpp\
+	   randomChump.cpp \
 
 all: $(NAME)
 

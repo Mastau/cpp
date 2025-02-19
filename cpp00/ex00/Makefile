@@ -8,10 +8,10 @@ SRCS = megaphone.cpp \
 all: $(NAME)
 
 $(NAME): $(OBJS)
-	$(CC) $(FLAGS) $(OBJS) $(HEADER) -o $@
+	$(CC) $(FLAGS) $(OBJS) -o $@
 $(DIROBJS)/%.o: %.cpp
 	@mkdir -p $(@D)
-	$(CC) $(FLAGS) $(HEADER) $< -c -o $@
+	$(CC) $(FLAGS) $< -c -o $@
 clean:
 	@rm -rf $(DIROBJS)
 fclean: clean
