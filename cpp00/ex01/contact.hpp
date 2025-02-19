@@ -2,6 +2,7 @@
 
 #include <string>
 #include <iostream>
+#include <iomanip>
 
 class Contact {
 	private:
@@ -18,5 +19,7 @@ class Contact {
 		std::string get_phonenumber(void);
 		std::string get_secret(void);
 		std::string get_input(std::string str);
-		int	new_contact(void);
+		void	new_contact(void);
+		void	show_infos_short(void);
+		void	show_infos(void);
 };

@@ -8,7 +8,7 @@ class Phonebook {
 		int	size;
 	public:
 		std::string get_input(std::string str);
-		int	add(void);
-		int	search(void);
+		void	add(void);
+		void	search(void);
 		Phonebook();
 };
