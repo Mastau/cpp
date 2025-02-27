@@ -1,11 +1,12 @@
-NAME = horde
+NAME = thisisbrain
 CC = c++
 FLAGS = -Werror -Wall -Wextra -g -std=c++98
 DIROBJS = .objs
 OBJS = $(SRCS:%.cpp=$(DIROBJS)/%.o)
 SRCS = main.cpp \
-	   Zombie.cpp \
-	   zombieHorde.cpp \
+	   Weapon.cpp \
+	   HumanA.cpp \
+	   HumanB.cpp \
 
 all: $(NAME)
 
