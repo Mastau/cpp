@@ -1,7 +1,7 @@
 #include "Zombie.hpp"
 
 int main(void) {
-	int nb = 0;
+	int nb = 50;
 	Zombie *horde = zombieHorde(nb, "Graou");
 	if (horde) {
 		for (int i = 0; i < nb; i++) {

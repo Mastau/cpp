@@ -1,6 +1,6 @@
 NAME = horde
 CC = c++
-FLAGS = -Werror -Wall -Wextra -g -std=c++98
+CXXFLAGS = -Werror -Wall -Wextra -g -std=c++98
 DIROBJS = .objs
 OBJS = $(SRCS:%.cpp=$(DIROBJS)/%.o)
 SRCS = main.cpp \
@@ -10,10 +10,10 @@ SRCS = main.cpp \
 all: $(NAME)
 
 $(NAME): $(OBJS)
-	$(CC) $(FLAGS) $(OBJS) -o $@
+	$(CC) $(CXXFLAGS) $(OBJS) -o $@
 $(DIROBJS)/%.o: %.cpp
 	@mkdir -p $(@D)
-	$(CC) $(FLAGS) $< -c -o $@
+	$(CC) $(CXXFLAGS) $< -c -o $@
 clean:
 	@rm -rf $(DIROBJS)
 fclean: clean
