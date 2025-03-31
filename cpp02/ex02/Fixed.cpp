@@ -38,7 +38,7 @@ bool Fixed::operator>=(const Fixed &copy) const {
 }
 
 bool Fixed::operator<=(const Fixed &copy) const {
-	return (this->_rawBits >= copy.getRawBits());
+	return (this->_rawBits <= copy.getRawBits());
 }
 
 bool Fixed::operator!=(const Fixed &copy) const {
@@ -66,7 +66,7 @@ Fixed Fixed::operator*(const Fixed &copy) const {
 }
 
 Fixed Fixed::operator-(const Fixed &copy) const {
-	return (Fixed(this->toFloat() * copy.toFloat()));
+	return (Fixed(this->toFloat() - copy.toFloat()));
 }
 
 Fixed Fixed::operator/(const Fixed &copy) const {
