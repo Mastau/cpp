@@ -11,6 +11,4 @@ int main(void) {
 	claptrap2.attack("graou");
 	claptrap.takeDamage(3);
 	claptrap.beRepaired(5);
-
-	//Check if !HitPts, amount == AttackDamage ???
 }
