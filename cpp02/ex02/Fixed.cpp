@@ -30,7 +30,7 @@ bool Fixed::operator>(const Fixed &copy) const {
 }
 
 bool Fixed::operator<(const Fixed &copy) const {
-	return (this->_rawBits > copy.getRawBits());
+	return (this->_rawBits < copy.getRawBits());
 }
 
 bool Fixed::operator>=(const Fixed &copy) const {

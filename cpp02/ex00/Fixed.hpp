@@ -10,5 +10,5 @@ class Fixed {
 		void setRawBits(int const raw);
 	private:
 		int _rawBits;
-
+		static const int _fractBits = 8;
 };
