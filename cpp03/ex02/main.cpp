@@ -2,7 +2,7 @@
 #include <iostream>
 #include <ostream>
 
-int main(void) {	\
+int main(void) {
 	FragTrap yes("ahhhhh");
 	FragTrap no("bhhhhhh");
 

@@ -6,39 +6,36 @@
 #include <iostream>
 #include <iomanip>
 
-int main(void)
-{
-	unsigned int nbOfPlace = 5;
+int main() {
+  std::cout << "delete test:" << std::endl;
+  {
+    Animal *zoo[10];
 
-	if (nbOfPlace < 0)
-	{
-		std::cout << "Invalid number of place in the chenil" << std::endl;
-	}
+    for (int i = 0; i < 5; i++) {
+      zoo[i] = new Cat();
+    }
 
-	const Animal *chenil[nbOfPlace];
+    for (int i = 5; i < 10; i++) {
+      zoo[i] = new Dog();
+    }
 
-	for	(unsigned int i = 0; i < nbOfPlace; i++)
-	{
-		if (i & 1)
-			chenil[i] = new Dog();
-		else
-			chenil[i] = new Cat();
-	}
-
-	std::cout << std::endl;
-
-	for (unsigned int i = 0; i < nbOfPlace; i++)
-	{
-		std::cout << std::setw(3) << chenil[i]->getType() << " : ";
-		chenil[i]->makeSound();
-	}
-
-	std::cout << std::endl;
-
-	for (unsigned int i = 0; i < nbOfPlace; i++)
-	{
-		delete chenil[i];
-	}
-
-	return (0);
+    for (int i = 0; i < 10; i++) {
+      delete zoo[i];
+    }
+  }
+  std::cout << "copy test:" << std::endl;
+  {
+    Cat *a = new Cat();
+    for (int i = 0; i < 10; i++) {
+      std::string idea = "idea_" + std::string(1, '0' + i);
+      a->setBrainIdear(idea, i);
+      std::cout << i << " " << a->getBrainIdear(i) << std::endl;
+    }
+    std::cout << std::endl;
+    Cat b;
+    b = *a;
+    for (int i = 0; i < 10; i++)
+      std::cout << i << " " << b.getBrainIdear(i) << std::endl;
+    delete a;
+  }
 }
