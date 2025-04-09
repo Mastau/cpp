@@ -1,9 +1,6 @@
-#include "AAnimal.hpp"
-#include "WrongAnimal.hpp"
-#include "WrongCat.hpp"
-#include "Cat.hpp"
 #include "Dog.hpp"
-#include <iostream>
+#include "Cat.hpp"
+#include "WrongCat.hpp"
 #include <iomanip>
 
 int main(void)
@@ -40,7 +37,7 @@ int main(void)
 		delete chenil[i];
 	}
 
-//	const AAnimal *animal = new AAnimal();
+	/* const AAnimal *animal = new AAnimal(); */
 
 	return (0);
 }
