@@ -1,5 +1,5 @@
 #include "Bureaucrat.hpp"
-
+#include "AForm.hpp"
 #include <iostream>
 #include <ostream>
 
@@ -19,7 +19,25 @@ Bureaucrat::Bureaucrat(const Bureaucrat &copy){
 
 Bureaucrat::~Bureaucrat(void) {
 }
+void Bureaucrat::signForm(AForm &form) {
+    try {
+        form.beSigned(*this);
+        std::cout << *this << " signed " << form << std::endl;
+    } catch (const std::exception &e) {
+        std::cout << *this << " couldn’t sign " << form
+                  << " because : " << e.what() << std::endl;
+    }
+}
 
+void Bureaucrat::executeForm(const AForm &form) {
+    try {
+        form.execute(*this);
+        std::cout << *this << " executed " << form << std::endl;
+    } catch (const std::exception &e) {
+        std::cout << *this << " couldn't execute " << form
+                  << " because : " << e.what() << std::endl;
+    }
+}
 Bureaucrat &Bureaucrat::operator=(const Bureaucrat &copy)
 {
 	if (this != &copy)
@@ -29,7 +47,34 @@ Bureaucrat &Bureaucrat::operator=(const Bureaucrat &copy)
 	}
 	return (*this);
 }
+Bureaucrat &Bureaucrat::operator++(void) {
+    _grade--;
+    if (_grade < 1)
+        throw GradeTooHighException();
+    return (*this);
+}
 
+Bureaucrat Bureaucrat::operator++(int) {
+    Bureaucrat old = *this;
+    _grade--;
+    if (_grade < 1)
+        throw GradeTooHighException();
+    return (old);
+}
+
+Bureaucrat &Bureaucrat::operator--(void) {
+    _grade++;
+    if (_grade > 150)
+        throw GradeTooLowException();
+    return (*this);
+}
+Bureaucrat Bureaucrat::operator--(int) {
+    Bureaucrat old = *this;
+    _grade++;
+    if (_grade > 150)
+        throw GradeTooLowException();
+    return (old);
+}
 int Bureaucrat::getGrade(void) const {return this->_grade;}
 std::string Bureaucrat::getName(void) const {return this->_name;}
 

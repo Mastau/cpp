@@ -5,6 +5,10 @@ DIROBJS = .objs
 OBJS = $(SRCS:%.cpp=$(DIROBJS)/%.o)
 SRCS = main.cpp \
 	   Bureaucrat.cpp \
+	   AForm.cpp \
+	   ShrubberyCreationForm.cpp \
+	   RobotomyRequestForm.cpp \
+	   PresidentialPardonForm.cpp
 
 all: $(NAME)
 

@@ -2,13 +2,14 @@
 
 #include <string>
 
+class Form;
+
 class Bureaucrat {
 	public:
 		Bureaucrat(void);
 		Bureaucrat(std::string const name, int grade);
 		Bureaucrat(Bureaucrat const &copy);
 		~Bureaucrat(void);
-		Bureaucrat &operator=(Bureaucrat const &copy);
 		std::string getName(void) const;
 		int getGrade(void) const;
 
@@ -17,6 +18,13 @@ class Bureaucrat {
 
 		void promote(void);
 		void demote(void);
+		void				signForm(Form &form);
+
+		Bureaucrat &operator=(Bureaucrat const &copy);
+		Bureaucrat &operator++(void);
+		Bureaucrat  operator++(int);
+		Bureaucrat &operator--(void);
+		Bureaucrat  operator--(int);
 	private:
 		const std::string _name;
 		int _grade;

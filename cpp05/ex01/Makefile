@@ -4,6 +4,7 @@ CXXFLAGS = -Werror -Wall -Wextra -g -std=c++98
 DIROBJS = .objs
 OBJS = $(SRCS:%.cpp=$(DIROBJS)/%.o)
 SRCS = main.cpp \
+	   Form.cpp \
 	   Bureaucrat.cpp \
 
 all: $(NAME)
