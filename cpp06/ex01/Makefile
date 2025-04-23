@@ -1,10 +1,10 @@
-NAME = ScalarConverter
+NAME = Serializer
 CXX = c++
 CXXFLAGS = -Werror -Wall -Wextra -g -std=c++98
 DIROBJS = .objs
 OBJS = $(SRCS:%.cpp=$(DIROBJS)/%.o)
 SRCS = main.cpp \
-	   ScalarConverter.cpp \
+	   Serializer.cpp \
 
 all: $(NAME)
 

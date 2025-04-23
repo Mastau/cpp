@@ -31,12 +31,12 @@ int main(void) {
 	} catch (const std::exception &) {
 	}
 	
-	ShrubberyCreationForm s;
+	ShrubberyCreationForm s("graou");
 
 	try {
 		knl.signForm(s);
-	} catch (std::exception &e) {
 		knl.executeForm(s);
+	} catch (std::exception &e) {
 		std::cerr << "Error : " << e.what() << std::endl;
 	}
 

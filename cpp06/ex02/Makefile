@@ -1,10 +1,10 @@
-NAME = ScalarConverter
+NAME = Base
 CXX = c++
 CXXFLAGS = -Werror -Wall -Wextra -g -std=c++98
 DIROBJS = .objs
 OBJS = $(SRCS:%.cpp=$(DIROBJS)/%.o)
 SRCS = main.cpp \
-	   ScalarConverter.cpp \
+	   Base.cpp \
 
 all: $(NAME)
 
