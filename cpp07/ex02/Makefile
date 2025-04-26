@@ -1,10 +1,9 @@
-NAME = ScalarConverter
+NAME = Array
 CXX = c++
 CXXFLAGS = -Werror -Wall -Wextra -g -std=c++98
 DIROBJS = .objs
 OBJS = $(SRCS:%.cpp=$(DIROBJS)/%.o)
 SRCS = main.cpp \
-	   ScalarConverter.cpp \
 
 all: $(NAME)
 

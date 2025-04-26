@@ -2,9 +2,14 @@
 
 #include <cstring>
 
-template <typename T, typename Func>
-void iter(T* array, size_t length, Func f) {
-	for (size_t i = 0; i < length; i++) {
-		f(array[i]);
+template<typename T> void	iter(T *arr, int len, void(*func)(T &)) {
+	for (int i = 0; i< len; i++) {
+		func(arr[i]);
+	}
+}
+
+template<typename T> void	iter(const T *arr, int len, void(*func)(const T &)) {
+	for (int i = 0; i< len; i++) {
+		func(arr[i]);
 	}
 }
